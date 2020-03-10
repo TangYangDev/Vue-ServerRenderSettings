@@ -60,24 +60,22 @@ if (isProductionEnv) {
       filename: "[name].[chunkhash:8].js"
     },
     module: {
-      rules: [
-        {
-          test: /\.styl/,
-          use: ExtractPlugin.extract({
-            fallback: "style-loader",
-            use: [
-              "css-loader",
-              {
-                loader: "postcss-loader",
-                options: {
-                  sourceMap: true
-                }
-              },
-              "stylus-loader"
-            ]
-          })
-        }
-      ]
+      rules: [{
+        test: /\.styl/,
+        use: ExtractPlugin.extract({
+          fallback: "vue-style-loader",
+          use: [
+            "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                sourceMap: true
+              }
+            },
+            "stylus-loader"
+          ]
+        })
+      }]
     },
     plugins: defaultPluins.concat([
       new ExtractPlugin("styles.[contentHash:8].css"),
@@ -93,22 +91,20 @@ if (isProductionEnv) {
   config = merge(baseConfig, {
     devtool: "#cheap-module-eval-source-map",
     module: {
-      rules: [
-        {
-          test: /\.styl/,
-          use: [
-            "style-loader",
-            "css-loader",
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true
-              }
-            },
-            "stylus-loader"
-          ]
-        }
-      ]
+      rules: [{
+        test: /\.styl/,
+        use: [
+          "vue-style-loader", //vue 热开发更新的功能
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          "stylus-loader"
+        ]
+      }]
     },
     devServer,
     plugins: defaultPluins.concat([

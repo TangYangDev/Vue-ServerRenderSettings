@@ -6,7 +6,10 @@
  * Copyright (C) 2020 Private
  */
 
-var path = require("path");
+const path = require("path");
+const createLoaderOptions = require('./vue-loader.config');
+
+const isDev = process.env.NODE.ENV === 'development';
 
 const config = {
   entry: {
@@ -18,8 +21,7 @@ const config = {
     filename: "build[hash:8].js"
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"]
       },
@@ -34,20 +36,7 @@ const config = {
       {
         test: /\.vue$/,
         loader: "vue-loader",
-        options: {
-          loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            scss: ["vue-style-loader", "css-loader", "sass-loader"],
-            sass: [
-              "vue-style-loader",
-              "css-loader",
-              "sass-loader?indentedSyntax"
-            ]
-          }
-          // other vue-loader options go here
-        }
+        options: createLoaderOptions(isDev)
       },
       {
         test: /\.jsx$/,
