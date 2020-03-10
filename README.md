@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue-project
 
 > A Vue.js Project
@@ -16,3 +17,7 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# Vue
+a vue.js project
+>>>>>>> c9b56edecb2db3165011521c390755008556abfa
