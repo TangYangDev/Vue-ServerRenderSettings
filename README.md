@@ -22,5 +22,3 @@ npm run build
 # Vue
 
 a vue.js project
-
-> > > > > > > c9b56edecb2db3165011521c390755008556abfa
