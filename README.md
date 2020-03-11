@@ -1,12 +1,12 @@
-<<<<<<< HEAD
-
-# vue-project
-
-> A Vue.js Project
-
 ## Build Setup
 
 ```bash
+# 增加vue-router
+npm install vue-router -S
+
+# 增加vuex
+npm install vuex -S
+
 # install dependencies
 npm install
 

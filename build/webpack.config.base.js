@@ -11,6 +11,11 @@ const createLoaderOptions = require('./vue-loader.config');
 
 const isDev = process.env.NODE.ENV === 'development';
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
+
 const config = {
   entry: {
     app: "./client/main.js"
@@ -19,6 +24,16 @@ const config = {
     path: path.resolve(__dirname, "../public"),
     publicPath: "/",
     filename: "build[hash:8].js"
+  },
+  // import Vue from 'vue' 所用的环境
+  // 说明：alias配置import时的相对路径方式(可自定义)
+  //      extensions可省略的后缀名
+  resolve: {
+    alias: {
+      'vue$': "vue/dist/vue.esm.js",
+      '@': resolve('client')
+    },
+    extensions: ["*", ".js", ".vue", ".json", ".styl", ".sass"]
   },
   module: {
     rules: [{
