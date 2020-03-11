@@ -5,38 +5,24 @@
  * date: 2020-03-11
  * Copyright (C) 2020 Private
  */
+const scssLoader = ["vue-style-loader", "css-loader", "sass-loader"]
+const sassLoader = [
+  "vue-style-loader",
+  "css-loader",
+  "sass-loader?indentedSyntax"
+]
 
 module.exports = (isDev) => {
-  if (isDev) {
-    return {
-      loaders: {
-        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-        // the "scss" and "sass" values for the lang attribute to the right configs here.
-        // other preprocessors should work out of the box, no loader config like this necessary.
-        scss: ["vue-style-loader", "css-loader", "sass-loader"],
-        sass: [
-          "vue-style-loader",
-          "css-loader",
-          "sass-loader?indentedSyntax"
-        ]
-      },
-      // other vue-loader options go here
-      preserverWhitepace: true, //控制标签内的空格
-      extractCSS: true //vue 热开发更新的功能
-    }
-  } else {
-    return {
-      loaders: {
-        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-        // the "scss" and "sass" values for the lang attribute to the right configs here.
-        // other preprocessors should work out of the box, no loader config like this necessary.
-        scss: ["vue-style-loader", "css-loader", "sass-loader"],
-        sass: [
-          "vue-style-loader",
-          "css-loader",
-          "sass-loader?indentedSyntax"
-        ]
-      }
+  return {
+    loaders: {
+      scss: scssLoader,
+      sass: sassLoader
+    },
+    preserverWhitepace: true, //控制标签内的空格
+    extractCSS: !isDev, //vue 热开发更新的功能
+    cssModules: {
+      localIdentName: isDev ? '[path]-[name]-[hash:base64:5]' : '[hash: base64: 5]',
+      camelCase: true
     }
   }
 }

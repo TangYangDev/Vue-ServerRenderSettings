@@ -57,6 +57,7 @@ if (isProductionEnv) {
       vendor: ["vue"]
     },
     output: {
+      publicPath: "./",
       filename: "[name].[chunkhash:8].js"
     },
     module: {

@@ -4,6 +4,9 @@ dist/
 npm-debug.log
 yarn-error.log
 
+#适配Mac
+public/
+!build/* 
 # Editor directories and files
 .idea
 *.suo
