@@ -30,6 +30,12 @@ export default () => {
     getters,
     actions,
     //加入Vuex模块配置
-    modules: {}
+    modules: {},
+    //加入Vuex插件
+    plugins: [
+      (store) => {
+
+      }
+    ]
   })
 }

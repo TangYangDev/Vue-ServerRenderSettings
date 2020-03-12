@@ -19,11 +19,17 @@ import createStore from './store/store.js'
 import "./assets/style/global.styl";
 import "./assets/style/style.sass";
 
+//监听导入
+import monitorVuex from './monitor/monitor'
+
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
 const router = createRouter();
 const store = createStore();
+
+monitorVuex(store);
+
 
 //新增
 Vue.config.productionTip = false;
