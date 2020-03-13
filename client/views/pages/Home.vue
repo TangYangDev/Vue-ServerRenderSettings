@@ -3,6 +3,7 @@
     <p>{{systemName}}</p>
     <p>{{currentDate}}</p>
     <h2>这是首页</h2>
+    <h4>验证成功了</h4>
   </div>
 </template>
 
