@@ -1,5 +1,5 @@
 ## 示意图
-![image](https://raw.githubusercontent.com/TangYangDev/Vue-ServerRenderSettings/master/WechatIMG2905.jpeg)
+![image](https://raw.githubusercontent.com/TangYangDev/Vue-ServerRenderSettings/master/Sketch_Map.jpeg)
 
 ## Build Setup
 
