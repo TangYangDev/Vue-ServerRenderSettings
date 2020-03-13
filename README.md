@@ -1,3 +1,6 @@
+## 示意图
+![image](https://raw.githubusercontent.com/TangYangDev/Vue-ServerRenderSettings/master/WechatIMG2905.jpeg)
+
 ## Build Setup
 
 ```bash
