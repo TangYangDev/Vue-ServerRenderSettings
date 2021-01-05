@@ -14,7 +14,7 @@
     "dev:server": "cross-env NODE_ENV=development node server/server.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "ejs": "^3.0.1",
     "koa": "^2.11.0",
     "koa-router": "^8.0.8",
